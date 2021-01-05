@@ -1,0 +1,28 @@
+{% extends "portfolio/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<h1 id="blogtitle" class="font-weight-bold text-center">Blog</h1>
+
+<!-- if more than 1 blogs then it will show blogs else blog  -->
+<h5 class="text-center mb-5">Afroz has written {{ blogs.count }} blog{{ blogs.count|pluralize }}</h5>
+
+{% for blog in blogs %}
+<!-- If more than one pages named details or anything exists 
+    in that case we will have to assign an app_name to distinguish
+    it with the other pages with same name -->
+<!-- In this case app name is blog -->
+<div class="row justify-content-center my-3">
+    <div class="col-md-10">
+        <a href=" {% url 'blog:details' blog.id %} ">
+            <h2>{{ blog.title}}</h2>
+        </a>
+        <h5 class="text-muted"> {{ blog.date|date:'M d Y'|upper }} </h5>
+        <h4> {{ blog.description|striptags|truncatechars:100 }} </h4>
+    </div>
+</div>
+{% endfor %}
+
+{% endblock %}
