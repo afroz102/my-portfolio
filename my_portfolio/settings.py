@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'ejwmc%s3m*0hg0a=qi3(gr(so!c+20#)%9i%3#d5!^)#-*60m('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['afroz102.pythonanywhere.com']
 
 
 # Application definition
