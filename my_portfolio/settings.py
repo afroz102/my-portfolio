@@ -129,6 +129,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # If working locally allow debug mode and localhost origin else debug= False
 try:
     from .local_settings import *
-
 except ImportError:
     print("Looks like no local file. You must be on production")
